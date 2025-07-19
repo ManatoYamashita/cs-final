@@ -1,0 +1,7 @@
+Principal_Component,Variance_Explained,Cumulative_Variance,Main_Features
+PC1,45.2,45.2,満足度関連(Retention+Interest+Positivity)
+PC2,28.7,73.9,認知度関連(Awareness+Appreciation)
+PC3,15.1,89.0,使用率独立成分
+PC4,8.3,97.3,ノイズ成分1
+PC5,2.1,99.4,ノイズ成分2
+PC6,0.6,100.0,残差成分

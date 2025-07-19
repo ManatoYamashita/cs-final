@@ -1,0 +1,7 @@
+Framework,Cluster,Usage_Rate,Retention_Rate,Contradiction_Index,Pattern_Type
+Next.js,2,0.540,0.680,79.41,矛盾型
+Astro,0,0.230,0.940,24.47,理想型
+SvelteKit,0,0.160,0.900,17.78,理想型
+Nuxt,2,0.220,0.810,27.16,矛盾型
+Remix,0,0.110,0.800,13.75,理想型
+Gatsby,1,0.190,0.270,70.37,衰退型

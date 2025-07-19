@@ -1,0 +1,30 @@
+=== Weka K-meansクラスタリング結果 ===
+アルゴリズム: Weka SimpleKMeans
+最適クラスタ数: 4
+距離関数: ユークリッド距離
+初期化方法: K-means++
+総平方和誤差 (SSE): 0.2954722568545586
+
+クラスタ中心:
+@relation StateOfJS2024_MetaFrameworks-weka.filters.unsupervised.attribute.Standardize-weka.filters.unsupervised.attribute.ReplaceMissingValues
+
+@attribute usage_rate numeric
+@attribute retention_rate numeric
+@attribute positivity_rate numeric
+@attribute interest_rate numeric
+@attribute awareness_rate numeric
+@attribute appreciation_rate numeric
+
+@data
+-0.142075,0.313863,-0.017175,-0.269896,0.455866,1.36427
+1.956267,-0.21834,0.807231,-0.053979,1.823464,-0.419775
+-0.491799,0.600434,0.326328,0.683736,-0.638212,0.209888
+-0.338795,-1.896827,-1.769039,-1.727334,-0.364693,-1.574158
+
+フレームワーク別クラスタ割り当て:
+Next.js → クラスタ 1
+Astro → クラスタ 2
+SvelteKit → クラスタ 2
+Nuxt → クラスタ 0
+Remix → クラスタ 2
+Gatsby → クラスタ 3

@@ -1,0 +1,6 @@
+Factor,Correlation_with_Retention,Strength,Interpretation
+Usage_Rate,-0.099,弱,負相関
+Positivity_Rate,0.828,極強,正相関
+Interest_Rate,0.944,極強,正相関
+Awareness_Rate,-0.116,弱,負相関
+Appreciation_Rate,0.763,強,正相関
