@@ -1,0 +1,213 @@
+[
+{
+    "dataPath": "dataAPI.surveys.state_of_js.js2024.meta_frameworks.meta_frameworks_work",
+    "name": "meta_frameworks_work",
+    "data": {
+    "id": "meta_frameworks_work",
+    "comments": {
+        "currentEdition": {
+        "count": 15
+        }
+    },
+    "responses": {
+        "currentEdition": {
+        "_metadata": {
+            "axis1Sort": {
+            "property": "count",
+            "order": "desc"
+            },
+            "limit": 50,
+            "cutoff": 10
+        },
+        "completion": {
+            "count": 11538,
+            "percentageSurvey": 82.33,
+            "total": 14015
+        },
+        "buckets": [
+            {
+            "count": 5147,
+            "id": "nextjs",
+            "percentageQuestion": 44.61,
+            "percentageSurvey": 36.72,
+            "entity": {
+                "name": "Next.js",
+                "nameClean": "Next.js",
+                "id": "nextjs",
+                "entityType": "library",
+                "homepage": {
+                "url": "https://nextjs.org"
+                },
+                "npm": {
+                "url": "https://www.npmjs.com/package/next"
+                }
+            }
+            },
+            {
+            "count": 1883,
+            "id": "nuxt",
+            "percentageQuestion": 16.32,
+            "percentageSurvey": 13.44,
+            "entity": {
+                "name": "Nuxt",
+                "nameClean": "Nuxt",
+                "id": "nuxt",
+                "entityType": "library",
+                "homepage": {
+                "url": "https://nuxt.com/"
+                },
+                "npm": {
+                "url": "https://www.npmjs.com/package/nuxt"
+                }
+            }
+            },
+            {
+            "count": 1461,
+            "id": "astro",
+            "percentageQuestion": 12.66,
+            "percentageSurvey": 10.42,
+            "entity": {
+                "name": "Astro",
+                "nameClean": "Astro",
+                "id": "astro",
+                "entityType": "library",
+                "homepage": {
+                "url": "https://astro.build/"
+                },
+                "npm": {
+                "url": "https://www.npmjs.com/package/astro"
+                }
+            }
+            },
+            {
+            "count": 1015,
+            "id": "sveltekit",
+            "percentageQuestion": 8.8,
+            "percentageSurvey": 7.24,
+            "entity": {
+                "name": "SvelteKit",
+                "nameClean": "SvelteKit",
+                "id": "sveltekit",
+                "entityType": "library",
+                "homepage": {
+                "url": "https://kit.svelte.dev/"
+                },
+                "npm": {
+                "url": "https://www.npmjs.com/package/@sveltejs/kit"
+                }
+            }
+            },
+            {
+            "count": 720,
+            "id": "remix",
+            "percentageQuestion": 6.24,
+            "percentageSurvey": 5.14,
+            "entity": {
+                "name": "Remix",
+                "nameClean": "Remix",
+                "id": "remix",
+                "entityType": "library",
+                "homepage": {
+                "url": "https://remix.run/"
+                },
+                "npm": {
+                "url": "https://www.npmjs.com/package/create-remix"
+                }
+            }
+            },
+            {
+            "count": 618,
+            "id": "gatsby",
+            "percentageQuestion": 5.36,
+            "percentageSurvey": 4.41,
+            "entity": {
+                "name": "Gatsby",
+                "nameClean": "Gatsby",
+                "id": "gatsby",
+                "entityType": "library",
+                "homepage": {
+                "url": "https://www.gatsbyjs.com"
+                },
+                "npm": {
+                "url": "https://www.npmjs.com/package/gatsby"
+                }
+            }
+            },
+            {
+            "count": 596,
+            "id": "docusaurus",
+            "percentageQuestion": 5.17,
+            "percentageSurvey": 4.25,
+            "entity": {
+                "name": "Docusaurus",
+                "nameClean": "Docusaurus",
+                "id": "docusaurus",
+                "entityType": "library",
+                "homepage": {
+                "url": "https://docusaurus.io/"
+                }
+            }
+            },
+            {
+            "count": 116,
+            "id": "analog",
+            "percentageQuestion": 1.01,
+            "percentageSurvey": 0.83,
+            "entity": {
+                "name": "Analog",
+                "nameClean": "Analog",
+                "id": "analog",
+                "entityType": "library",
+                "homepage": {
+                "url": "https://analogjs.org/"
+                }
+            }
+            },
+            {
+            "count": 116,
+            "id": "solidstart",
+            "percentageQuestion": 1.01,
+            "percentageSurvey": 0.83,
+            "entity": {
+                "name": "SolidStart",
+                "nameClean": "SolidStart",
+                "id": "solidstart",
+                "entityType": "library",
+                "homepage": {
+                "url": "https://start.solidjs.com/"
+                }
+            }
+            },
+            {
+            "count": 82,
+            "id": "fresh",
+            "percentageQuestion": 0.71,
+            "percentageSurvey": 0.59,
+            "entity": {
+                "name": "Deno Fresh",
+                "nameClean": "Deno Fresh",
+                "id": "fresh",
+                "entityType": "library",
+                "homepage": {
+                "url": "https://fresh.deno.dev/"
+                }
+            }
+            },
+            {
+            "count": 3801,
+            "id": "na",
+            "percentageQuestion": 32.94,
+            "percentageSurvey": 27.12
+            },
+            {
+            "count": 2477,
+            "id": "no_answer",
+            "percentageQuestion": 0,
+            "percentageSurvey": 17.67
+            }
+        ]
+        }
+    }
+    }
+}
+]

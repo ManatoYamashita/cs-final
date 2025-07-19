@@ -44,6 +44,10 @@ cs-final/
 ├── CLAUDE.md                      # プロジェクト概要・計画書（メイン）
 ├── README.md                      # プロジェクト説明（このファイル）
 ├── task.md                        # 課題要件・提出物詳細
+├── surveys/                       # 調査データ
+│   ├── README.md                  # データ説明
+│   ├── state-of-js-2024/         # State of JS 2024データ
+│   └── state-of-react-2024/      # State of React 2024データ
 └── reports/                       # レポート・分析結果
     ├── REPORTS.md                 # レポートテンプレート
     └── report2.md                 # Next.js教師なし学習分析レポート
@@ -70,7 +74,23 @@ cs-final/
 
 ### データソース
 - **State of JS 2024 公式データ**: https://stateofjs.com/
-- **補完データ**: GitHub State of JS リポジトリ、過去年度データ
+- **State of React 2024 公式データ**: https://stateofreact.com/
+- **補完データ**: GitHub State of JS/React リポジトリ、過去年度データ
+
+### 利用可能なデータセット
+#### State of JS 2024
+- **メタフレームワーク使用率推移**: `surveys/state-of-js-2024/meta_frameworks_ratios.json`
+- **業務での使用状況**: `surveys/state-of-js-2024/meta_frameworks_work.json`
+- **メタフレームワーク満足度**: `surveys/state-of-js-2024/meta_frameworks_happiness.json`
+- **メタフレームワークの課題**: `surveys/state-of-js-2024/meta_frameworks_pain_points.json`
+
+#### State of React 2024
+- **全機能データ**: `surveys/state-of-react-2024/all_features.json` (4,429行)
+- **全ツール経験**: `surveys/state-of-react-2024/all_tools_experience.json` (4,706行)
+- **Hooks課題**: `surveys/state-of-react-2024/hooks_pain_points.json` (271行)
+- **主要API課題**: `surveys/state-of-react-2024/main_apis_pain_points.json` (248行)
+- **新API課題**: `surveys/state-of-react-2024/new_apis_pain_points.json` (239行)
+- **コンポーネントライブラリ課題**: `surveys/state-of-react-2024/omponent_libraries_pain_points.json` (157行)
 
 ### データ項目
 | カテゴリ | 項目 | データ型 | 説明 |
@@ -129,7 +149,10 @@ unzip weka-3-9-6.zip
 ### 2. データ準備
 ```bash
 # State of JS 2024データの取得
-# （手動でダウンロードまたはAPI使用）
+# 手動でjsonをダウンロード
+
+# State of React 2024データの取得
+# 手動でjsonをダウンロード
 
 # CSV → ARFF変換
 java -cp weka.jar weka.core.converters.CSVLoader data.csv > data.arff
@@ -262,6 +285,7 @@ java -cp weka.jar weka.attributeSelection.PrincipalComponents -t data.arff
 
 ### 技術資料
 - [State of JS 2024 Survey Results](https://stateofjs.com/)
+- [State of React 2024 Survey Results](https://stateofreact.com/)
 - [Weka Documentation](https://www.cs.waikato.ac.nz/ml/weka/documentation.html)
 - [Java機械学習ライブラリ](https://www.oracle.com/java/)
 
