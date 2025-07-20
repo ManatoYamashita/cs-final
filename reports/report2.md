@@ -1,5 +1,7 @@
 # (2.教師なし学習分析)Next.js教師なし学習分析 レポート
 
+![cs-final](https://github.com/user-attachments/assets/ca30db8d-9ed6-4c4c-82df-80dbbc54a1bf)
+
 東京都市大学 メディア情報学部 **コンピュータシミュレーション**(2025) 最終課題2
 **学籍番号:** 2172117
 **氏名:** 山下マナト

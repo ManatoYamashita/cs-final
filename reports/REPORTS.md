@@ -1,5 +1,7 @@
 # タイトルを記載しましょう
 
+![cs-final](https://github.com/user-attachments/assets/ca30db8d-9ed6-4c4c-82df-80dbbc54a1bf)
+
 学籍番号 氏名
 学籍番号 氏名
 学籍番号 氏名
