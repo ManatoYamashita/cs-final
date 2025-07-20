@@ -1,4 +1,7 @@
-# Next.js教師なし学習分析プロジェクト
+# Conputer Simulation Final Report(2. Next.js satisfaction survey)
+
+![cs-final](https://github.com/user-attachments/assets/ca30db8d-9ed6-4c4c-82df-80dbbc54a1bf)
+
 
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
 [![Weka](https://img.shields.io/badge/Weka-3.9.6-orange?style=for-the-badge)](https://www.cs.waikato.ac.nz/ml/weka/)
