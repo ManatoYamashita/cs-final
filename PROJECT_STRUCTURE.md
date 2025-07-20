@@ -5,7 +5,7 @@
 
 ## ディレクトリ構造
 
-```
+```bash
 cs-final/
 ├── CLAUDE.md                           # Claude Code用プロジェクト指示書
 ├── README.md                           # プロジェクト説明書
