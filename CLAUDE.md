@@ -4,52 +4,84 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **Computer Simulation final project** for Tokyo City University focusing on **unsupervised learning analysis of Next.js developer satisfaction**. The project analyzes the paradox between Next.js's high usage and low user satisfaction using machine learning techniques.
+This is a **Computer Simulation final project** for Tokyo City University focusing on **unsupervised learning analysis of Next.js developer satisfaction**. The project analyzes the paradox between Next.js's high usage and low user satisfaction using machine learning techniques with **State of JS 2024** real-world survey data.
 
 **Key Details:**
 - **Course**: Computer Simulation (コンピュータシミュレーション)
-- **Assignment Type**: Group project (3 members)
+- **Assignment Type**: Group project (3 members) 
 - **Due Date**: August 1, 2025, 23:59
 - **Primary Language**: Java (required by course)
-- **ML Library**: Weka (recommended)
+- **ML Library**: Weka 3.8.6 (official library)
 - **Analysis Focus**: Unsupervised learning (K-means, hierarchical clustering, PCA)
+- **Major Discovery**: Next.js forms isolated cluster with 3.82x contradiction index vs competitors
 
 ## Development Commands
 
+### Core Analysis Execution
+```bash
+# Compile Weka analysis program
+javac -cp "weka/weka-3-8-6/weka.jar:." src/NextjsWekaAnalysis.java -d .
+
+# Run complete analysis (generates all results and CSV files)
+java -cp "weka/weka-3-8-6/weka.jar:." NextjsWekaAnalysis
+```
+
+### Visualization
+```bash
+# Create graphs using provided CSV data and guide
+# See GRAPH_CREATION_GUIDE.md for detailed instructions
+```
 
 ## Project Structure
 
 ```bash
 cs-final/
-├── CLAUDE.md                      # This file (Claude Code instructions)
-├── README.md                      # Project description (Japanese)
-├── task.md                        # Assignment requirements (Japanese)
-└── reports/                       # Analysis reports
-    ├── REPORTS.md                 # Report template
-    └── report2.md                 # Next.js unsupervised learning analysis report
+├── src/
+│   └── NextjsWekaAnalysis.java         # Main Weka analysis program
+├── weka/
+│   └── weka-3-8-6/
+│       └── weka.jar                    # Weka 3.8.6 official library
+├── csv_data/                           # Generated visualization datasets
+│   ├── framework_comparison.csv        # Framework contradiction analysis
+│   ├── kmeans_clusters.csv            # K-means clustering results
+│   ├── nextjs_timeseries.csv          # Time series degradation data
+│   ├── correlation_matrix.csv         # Retention correlation analysis
+│   └── pca_results.csv                # Principal component analysis
+├── results/                           # Detailed analysis outputs
+│   ├── weka_kmeans_results.txt        # K-means detailed results
+│   ├── weka_hierarchical_results.txt  # Hierarchical clustering
+│   └── weka_contradiction_analysis.txt # Contradiction index analysis
+├── output/
+│   └── meta_frameworks_analysis.arff  # Weka-format dataset
+└── surveys/                           # Source data (State of JS 2024)
+    └── state-of-js-2024/              # Raw survey JSON files
 ```
 
 ## Technical Architecture
 
-### Data Analysis Pipeline
-1. **Data Collection**: State of JS 2024 survey data
-2. **Preprocessing**: CSV → ARFF conversion, missing value imputation
-3. **Analysis Methods**:
-   - K-means clustering (user segmentation)
-   - Hierarchical clustering (framework competition analysis)
-   - PCA (feature utilization patterns)
-4. **Output**: Java programs + analysis report (PDF)
+### Analysis Program Structure
+The main analysis is implemented in `src/NextjsWekaAnalysis.java` which:
 
-### Data Requirements
-- **Format**: CSV input → ARFF for Weka
-- **Target Variable**: Must be rightmost column
-- **Missing Values**: Must be imputed (mean for numeric, mode for categorical)
-- **Header Row**: Required with feature names
+1. **Data Preparation**: Loads State of JS 2024 framework data (6 frameworks)
+2. **Standardization**: Applies Z-score normalization using Weka's Standardize filter
+3. **K-means Analysis**: Uses elbow method to determine optimal K=4 clusters
+4. **Hierarchical Clustering**: Ward linkage method for framework relationship analysis
+5. **Contradiction Index**: Custom metric = (usage_rate/retention_rate) × 100
+6. **Output Generation**: Creates 5 CSV files for visualization + detailed result files
 
-### Key Analysis Areas
-1. **Developer Segmentation**: Satisfaction patterns by user characteristics
-2. **Framework Competition**: Next.js vs Astro/SvelteKit/Nuxt.js usage patterns  
-3. **Feature Usage**: App Router, Server Components, API Routes correlation with satisfaction
+### Key Findings Architecture
+- **Framework Segmentation**: 3 distinct patterns identified
+  - Ideal Type: Astro, SvelteKit, Remix (low contradiction ~18.67)
+  - Contradiction Type: Next.js, Nuxt (high contradiction ~53.29) 
+  - Decline Type: Gatsby (extreme contradiction 70.37)
+- **Next.js Isolation**: Forms separate cluster showing unique contradiction pattern
+- **Time Series Degradation**: 6-year retention decline (88% → 68%)
+
+### Data Flow
+```
+State of JS 2024 JSON → Java Program → Weka Instances → 
+Clustering Analysis → CSV Outputs → Visualization → Report Integration
+```
 
 ## Submission Requirements
 
@@ -72,21 +104,28 @@ cs-final/
 
 ## Working with this Project
 
-### When adding code:
-- **Always use Java** for core analysis (course requirement)
-- Include Weka library dependencies
-- Follow data preprocessing pipeline (CSV → missing value handling → ARFF)
-- Place target variable in rightmost column
+### Core Analysis Workflow
+1. **Main Program**: `NextjsWekaAnalysis.java` contains complete analysis pipeline
+2. **Weka Dependency**: Always include `weka/weka-3-8-6/weka.jar` in classpath
+3. **Data Generation**: Running analysis automatically creates all CSV files in `csv_data/`
+4. **Visualization**: Use `GRAPH_CREATION_GUIDE.md` with generated CSVs
+5. **Report Updates**: Results integrate into `reports/report2.md`
 
-### When writing reports:
-- Use provided template in `reports/REPORTS.md`
-- Include detailed methodology explanations
-- Focus heavily on results interpretation (highest scoring section)
-- Document all data sources and preprocessing steps
+### Key Implementation Details
+- **Fixed Seed**: K-means uses seed=42 for reproducibility
+- **Standardization Required**: All features Z-score normalized before clustering
+- **ARFF Format**: Weka-compatible dataset saved to `output/meta_frameworks_analysis.arff`
+- **Error Handling**: PCA disabled due to matrix library conflicts
 
-### Important Constraints:
-- Cannot use standard datasets (iris, housing, breast-cancer, etc.)
-- Must include reproducible analysis conditions
-- Java code required even if prototyping in other languages
-- All visualizations must be reproducible in Excel if using other tools
-- Always respose in 日本語
+### Critical Analysis Components
+- **Contradiction Index Calculation**: Core innovation quantifying framework paradox
+- **Elbow Method Implementation**: Determines optimal cluster count scientifically
+- **Time Series Regression**: Linear trend analysis for satisfaction degradation
+- **CSV Export Functions**: Generate visualization-ready datasets
+
+### Course Requirements Compliance
+- Java-only implementation (no Python/R in submission)
+- Weka official library usage (not custom implementations)
+- Original dataset (State of JS 2024, not standard ML datasets)
+- Reproducible analysis with documented methodology
+- Always respond in 日本語

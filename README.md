@@ -7,8 +7,12 @@
 
 ## 📋 プロジェクト概要
 
+![stateofjs2024](./images/stateofjs2024.webp)
+
 ### 背景
 State of JS 2024の調査結果により、Next.jsは使用量では圧倒的に上位にあるものの、ユーザー満足度（retention）では最下位に近いという興味深い現象が判明しています。この矛盾する結果の背景を教師なし学習により分析し、Next.js利用者の満足度とユーザーパターンの関係を明らかにすることを目的としています。
+
+![Next.js rations](./images/meta_frameworks_ratios.png)
 
 ### 目的
 - Next.js利用者の満足度とユーザーパターンの関係を明らかにする
