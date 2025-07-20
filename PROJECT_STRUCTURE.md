@@ -7,52 +7,49 @@
 
 ```bash
 cs-final/
-├── CLAUDE.md                           # Claude Code用プロジェクト指示書
-├── README.md                           # プロジェクト説明書
-├── GRAPH_CREATION_GUIDE.md             # グラフ作成完全マニュアル
-├── PROJECT_STRUCTURE.md                # このファイル（プロジェクト構造説明）
+├── .git/                          # Gitリポジトリ管理
+├── CLAUDE.md                      # Claude Code用プロジェクト指示書
+├── README.md                      # プロジェクト説明書（336行）
+├── PROJECT_STRUCTURE.md           # プロジェクト構造説明（124行）
 │
-├── src/                                # ソースコード
-│   └── NextjsWekaAnalysis.java         # Weka完全版分析プログラム（メイン）
+├── src/                           # ソースコード
+│   └── NextjsWekaAnalysis.java    # Weka完全版分析プログラム（523行）
 │
-├── weka/                               # Weka環境
-│   └── weka-3-8-6/                     # Weka 3.8.6公式ライブラリ
-│       ├── weka.jar                    # メインライブラリ
-│       └── [その他Wekaファイル群]       # ドキュメント、データ例等
+├── weka/                          # Weka環境
+│   └── weka-3-8-6/               # Weka 3.8.6公式ライブラリ
 │
-├── output/                             # Weka分析結果
-│   └── meta_frameworks_analysis.arff   # Weka標準形式データセット
+├── output/                        # Weka分析結果
+│   └── meta_frameworks_analysis.arff
 │
-├── results/                            # 分析結果詳細
-│   ├── weka_kmeans_results.txt         # K-meansクラスタリング結果
-│   ├── weka_hierarchical_results.txt   # 階層クラスタリング結果
+├── results/                       # 分析結果詳細
+│   ├── weka_kmeans_results.txt    # K-meansクラスタリング結果
+│   ├── weka_hierarchical_results.txt # 階層クラスタリング結果
 │   └── weka_contradiction_analysis.txt # 矛盾指数分析結果
 │
-├── csv_data/                           # グラフ作成用CSVデータ
-│   ├── framework_comparison.csv        # フレームワーク比較データ
-│   ├── kmeans_clusters.csv             # K-meansクラスタ結果
-│   ├── nextjs_timeseries.csv           # Next.js時系列データ
-│   ├── correlation_matrix.csv          # 相関分析結果
-│   └── pca_results.csv                 # 主成分分析結果
+├── csv_data/                      # グラフ作成用CSVデータ
+│   ├── framework_comparison.csv   # フレームワーク比較データ
+│   ├── kmeans_clusters.csv        # K-meansクラスタ結果
+│   ├── nextjs_timeseries.csv      # Next.js時系列データ
+│   ├── correlation_matrix.csv     # 相関分析結果
+│   └── pca_results.csv            # 主成分分析結果
 │
-├── surveys/                            # 元データ（State of JS 2024）
-│   ├── state-of-js-2024/
-│   │   ├── meta_frameworks_ratios.json # メタフレームワーク使用率・満足度
-│   │   ├── meta_frameworks_happiness.json # 時系列満足度データ
-│   │   ├── meta_frameworks_pain_points.json # 課題データ
-│   │   └── meta_frameworks_work.json   # 業務利用データ
-│   └── state-of-react-2024/
-│       ├── all_features.json           # React機能満足度
-│       ├── hooks_pain_points.json      # Hooks課題データ
-│       └── [その他React関連データ]      # 補完データ
+├── surveys/                       # 元データ
+│   ├── README.md                  # データ説明
+│   ├── state-of-js-2024/         # State of JS 2024データ
+│   └── state-of-react-2024/      # State of React 2024データ
 │
-├── reports/                            # レポート
-│   ├── REPORTS.md                      # レポートテンプレート
-│   └── report2.md                      # 最終レポート（教師なし学習担当分）
+├── reports/                       # レポート
+│   ├── REPORTS.md                 # レポートテンプレート（70行）
+│   └── report2.md                 # 最終レポート（281行）
 │
-└── images/                             # 画像資料
-    ├── meta_frameworks_ratios.png      # フレームワーク使用率図
-    └── stateofjs2024.webp              # State of JS 2024ロゴ
+└── images/                        # 画像資料
+    ├── meta_frameworks_ratios.png # フレームワーク使用率図
+    ├── correction_matrix.png      # 相関行列図
+    ├── framework_comparison.png   # フレームワーク比較図
+    ├── kmeans_clusters.png        # K-meansクラスタ図
+    ├── nextjs_timeseries.png      # Next.js時系列図
+    ├── pca_result.png             # PCA結果図
+    └── stateofjs2024.webp         # State of JS 2024ロゴ
 ```
 
 ## 重要ファイル詳細

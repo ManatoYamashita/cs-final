@@ -14,8 +14,9 @@
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-## 📋 プロジェクト概要
+## プロジェクト概要
 
+実際の[レポート](./reports/report2.md)はこちら
 ![stateofjs2024](./images/stateofjs2024.webp)
 
 ### 背景
@@ -29,7 +30,7 @@ State of JS 2024の調査結果により、Next.jsは使用量では圧倒的に
 - 競合メタフレームワークとの差別化ポイントを分析する
 - Next.jsの改善点や市場戦略に関する示唆を得る
 
-## 🎯 課題要件
+## 課題要件
 
 ### 基本情報
 - **科目**: コンピュータシミュレーション（東京都市大学）
@@ -38,9 +39,9 @@ State of JS 2024の調査結果により、Next.jsは使用量では圧倒的に
 - **形式**: グループ課題（3名1組）
 
 ### 必須分析対象
-- ✅ **教師あり学習** - 他メンバー担当
-- ✅ **教師なし学習** - **あなたの担当（Next.js分析）**
-- ✅ **テキストデータ分析** - 他メンバー担当
+- **教師あり学習** - 福井みきや
+- **教師なし学習** - **山下マナト（Next.js分析）**
+- **テキストデータ分析** - 助川ゆうか
 
 ### 技術制約
 - **プログラム言語**: Java（原則）
@@ -49,24 +50,56 @@ State of JS 2024の調査結果により、Next.jsは使用量では圧倒的に
 - **前処理**: 欠測値補完必須
 - **目的変数**: 最右列配置
 
-## 🏗️ プロジェクト構造
+## プロジェクト構造
 
 ```bash
 cs-final/
 ├── .git/                          # Gitリポジトリ管理
-├── CLAUDE.md                      # プロジェクト概要・計画書（メイン）
-├── README.md                      # プロジェクト説明（このファイル）
-├── task.md                        # 課題要件・提出物詳細
-├── surveys/                       # 調査データ
+├── CLAUDE.md                      # Claude Code用プロジェクト指示書
+├── README.md                      # プロジェクト説明書（336行）
+├── PROJECT_STRUCTURE.md           # プロジェクト構造説明（124行）
+│
+├── src/                           # ソースコード
+│   └── NextjsWekaAnalysis.java    # Weka完全版分析プログラム（523行）
+│
+├── weka/                          # Weka環境
+│   └── weka-3-8-6/               # Weka 3.8.6公式ライブラリ
+│
+├── output/                        # Weka分析結果
+│   └── meta_frameworks_analysis.arff
+│
+├── results/                       # 分析結果詳細
+│   ├── weka_kmeans_results.txt    # K-meansクラスタリング結果
+│   ├── weka_hierarchical_results.txt # 階層クラスタリング結果
+│   └── weka_contradiction_analysis.txt # 矛盾指数分析結果
+│
+├── csv_data/                      # グラフ作成用CSVデータ
+│   ├── framework_comparison.csv   # フレームワーク比較データ
+│   ├── kmeans_clusters.csv        # K-meansクラスタ結果
+│   ├── nextjs_timeseries.csv      # Next.js時系列データ
+│   ├── correlation_matrix.csv     # 相関分析結果
+│   └── pca_results.csv            # 主成分分析結果
+│
+├── surveys/                       # 元データ
 │   ├── README.md                  # データ説明
 │   ├── state-of-js-2024/         # State of JS 2024データ
 │   └── state-of-react-2024/      # State of React 2024データ
-└── reports/                       # レポート・分析結果
-    ├── REPORTS.md                 # レポートテンプレート
-    └── report2.md                 # Next.js教師なし学習分析レポート
+│
+├── reports/                       # レポート
+│   ├── REPORTS.md                 # レポートテンプレート（70行）
+│   └── report2.md                 # 最終レポート（281行）
+│
+└── images/                        # 画像資料
+    ├── meta_frameworks_ratios.png # フレームワーク使用率図
+    ├── correction_matrix.png      # 相関行列図
+    ├── framework_comparison.png   # フレームワーク比較図
+    ├── kmeans_clusters.png        # K-meansクラスタ図
+    ├── nextjs_timeseries.png      # Next.js時系列図
+    ├── pca_result.png             # PCA結果図
+    └── stateofjs2024.webp         # State of JS 2024ロゴ
 ```
 
-## 📊 分析手法
+## 分析手法
 
 ### 1. K-meansクラスタリング
 **目的**: Next.js開発者を満足度パターンでセグメント化
@@ -83,7 +116,7 @@ cs-final/
 - **データ**: App Router、Server Components、API Routes等の機能利用状況
 - **仮説**: 機能の組み合わせ使用が満足度に影響
 
-## 📈 データ仕様
+## データ仕様
 
 ### データソース
 - **State of JS 2024 公式データ**: https://stateofjs.com/
@@ -122,14 +155,15 @@ cs-final/
 | 競合 | also_uses_sveltekit | バイナリ | SvelteKit併用有無 |
 | 競合 | also_uses_nuxt | バイナリ | Nuxt.js併用有無 |
 
-## 🛠️ 技術仕様
+## 技術仕様
 
 ### 開発環境
 - **OS**: macOS 15.5 (24F74)
 - **言語**: Java（最新版）
 - **ライブラリ**: Weka 3.9.6
 - **データ処理**: CSV → ARFF変換
-- **IDE**: NetBeans（推奨）
+- **IDE**: VS Code
+- **バージョン管理**: Git
 
 ### 前処理戦略
 1. **欠測値処理**
@@ -147,7 +181,7 @@ cs-final/
    - 外れ値の検出・処理
    - データ品質チェック
 
-## 📋 セットアップ手順
+## セットアップ手順
 
 ### 1. 環境構築
 ```bash
@@ -183,7 +217,7 @@ java -cp weka.jar weka.clusterers.HierarchicalClusterer -t data.arff
 java -cp weka.jar weka.attributeSelection.PrincipalComponents -t data.arff
 ```
 
-## 📊 分析手順
+## 分析手順
 
 ### Phase 1: データ探索
 1. データの基本統計量確認
@@ -211,7 +245,7 @@ java -cp weka.jar weka.attributeSelection.PrincipalComponents -t data.arff
 2. 仮説の検証
 3. 実用的な洞察の抽出
 
-## 📁 提出物
+## 提出物
 
 ### 必須提出物
 1. **分析レポート**（PDF形式）
@@ -234,14 +268,7 @@ java -cp weka.jar weka.attributeSelection.PrincipalComponents -t data.arff
 
 4. **ZIP圧縮**して一括提出
 
-### 評価基準（100点満点）
-- データの真新しさ: 5点
-- 記載の正確さ: 20点
-- 分析手法の工夫: 15点
-- **結果の解釈と考察: 35点**（最重要）
-- 課題設定の工夫: 25点
-
-## 🎯 期待される成果
+## 期待される成果
 
 ### 分析結果
 1. **開発者セグメント**
@@ -259,42 +286,7 @@ java -cp weka.jar weka.attributeSelection.PrincipalComponents -t data.arff
    - 未活用機能の特定
    - 学習パスの提案
 
-### 実用的価値
-- Next.js開発チームへの改善提案
-- 開発者コミュニティへの学習指針
-- 企業のフレームワーク選択支援
-
-## 📅 スケジュール
-
-| 週 | タスク | 成果物 |
-|----|--------|--------|
-| 1 | データ収集・前処理 | クリーンなデータセット |
-| 2 | 探索的データ分析 | 基本統計・可視化 |
-| 3 | クラスタリング分析 | セグメント分析結果 |
-| 4 | 主成分分析・結果統合 | 最終分析結果 |
-| 5 | レポート作成 | 最終レポート |
-
-## ⚠️ リスク管理
-
-### 想定リスク
-1. **データ取得困難**
-   - 対策: 複数のデータソース確保
-   - 代替案: サンプルデータでの概念実証
-
-2. **データ品質問題**
-   - 対策: 厳格な前処理プロセス
-   - 検証: 複数の検証手法併用
-
-3. **分析結果の解釈困難**
-   - 対策: 専門知識の活用
-   - 支援: 教員・SAへの相談
-
-### 品質保証
-- 分析結果の再現性確保
-- 複数手法での結果検証
-- 統計的有意性の確認
-
-## 📚 参考資料
+## 参考資料
 
 ### 技術資料
 - [State of JS 2024 Survey Results](https://stateofjs.com/)
@@ -307,25 +299,12 @@ java -cp weka.jar weka.attributeSelection.PrincipalComponents -t data.arff
 - 主成分分析の実装例
 - ユーザー満足度分析の手法
 
-## 👥 チーム情報
+## チーム情報
 
 ### メンバー
-- **教師なし学習担当**: [あなたの名前]
-- **教師あり学習担当**: [メンバー名]
-- **テキスト分析担当**: [メンバー名]
-
-### サポート
-- **教員**: 三川 健太 先生
-- **場所**: 22H教室
-- **質問受付**: 授業時間中
-
-## 📄 ライセンス
-
-このプロジェクトはMITライセンスの下で公開されています。詳細は[LICENSE](LICENSE)ファイルを参照してください。
-
-## 🤝 貢献
-
-このプロジェクトは東京都市大学コンピュータシミュレーション最終課題として作成されています。質問や提案がある場合は、授業時間中に22H教室でお気軽にお声がけください。
+- **教師なし学習担当**: 山下マナト
+- **教師あり学習担当**: 福井ミキヤ
+- **テキスト分析担当**: 助川ゆうか
 
 ---
 
