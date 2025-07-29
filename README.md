@@ -308,6 +308,4 @@ java -cp weka.jar weka.attributeSelection.PrincipalComponents -t data.arff
 
 ---
 
-**最終更新**: 2025年7月18日  
-**バージョン**: 1.0.0  
-**ステータス**: 開発中
+**最終更新**: 2025年7月18日
