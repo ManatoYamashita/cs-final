@@ -1,4 +1,4 @@
-# Conputer Simulation Final Report(2. Next.js satisfaction survey)
+# Computer Simulation Final Report(2. Next.js satisfaction survey)
 
 ![cs-final](https://github.com/user-attachments/assets/ca30db8d-9ed6-4c4c-82df-80dbbc54a1bf)
 
